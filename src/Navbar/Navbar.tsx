@@ -4,6 +4,7 @@ import React, {useState} from 'react';
 
 export default function Navbar() {
 
+    console.log(React); // netlify ahh
     let [themeButtonIcon, setThemeButtonIcon] = useState('✦');
 
     function toggleTheme() {

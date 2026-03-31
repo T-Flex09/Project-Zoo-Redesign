@@ -3,10 +3,10 @@ nav {
     left: 50%;
     transform: translateX(-50%);
 
-    margin-top: 1em;
-    padding: 0 1em;
+    margin-top: 2rem;
+    padding: 0 1rem;
     width: 90vw;
-    height: 4em;
+    height: 4rem;
 
     display: flex;
     justify-content: space-between;
@@ -20,13 +20,13 @@ nav {
 }
 
 .logo {
-    height: 3em;
+    height: 3rem;
     width: auto;
 }
 
 .themeSwitcher {
     height: auto;
-    font-size: 2em;
+    font-size: 2rem;
     margin: 0;
     padding: 0;
     background: #0000;

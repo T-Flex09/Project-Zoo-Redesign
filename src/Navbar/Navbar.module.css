@@ -4,6 +4,7 @@ nav {
     transform: translateX(-50%);
 
     margin-top: 1em;
+    padding: 0 1em;
     width: 90vw;
     height: 4em;
 
@@ -21,7 +22,6 @@ nav {
 .logo {
     height: 3em;
     width: auto;
-    margin-left: 1em;
 }
 
 .themeSwitcher {
@@ -29,4 +29,7 @@ nav {
     font-size: 2em;
     margin: 0;
     padding: 0;
+    background: #0000;
+    color: #fff;
+    border: none;
 }

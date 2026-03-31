@@ -1,6 +1,15 @@
+:root {
+    --bg-color: #3c08a2;
+}
+
+:root.light-mode {
+    --bg-color: #c6a9ff;
+}
+
 body {
     width: 100vw;
     min-height: 100vh;
     margin: 0;
-    background-color: blueviolet;
+    background-color: var(--bg-color);
+    transition: 1s;
 }

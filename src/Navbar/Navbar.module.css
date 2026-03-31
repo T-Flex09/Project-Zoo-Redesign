@@ -7,3 +7,8 @@ nav {
     width: 90vw;
     min-height: 4em;
 }
+
+.themeSwitcher {
+    height: auto;
+    font-size: 2em;
+}

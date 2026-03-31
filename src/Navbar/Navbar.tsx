@@ -1,11 +1,15 @@
 import styles from './Navbar.module.css';
+// import React, {useEffect} from 'react';
 
 export default function Navbar() {
-    // ca sa nu faca urat deocamdata vercel
-    const style = styles;
-    console.log(style);
-    //
+
+    function toggleTheme() {
+        document.documentElement.classList.toggle('light-mode');
+    }
+
     return (
-        <nav></nav>
+        <nav>
+            <button className={styles.themeSwitcher} onClick={toggleTheme}>test</button>
+        </nav>
     );
 }

@@ -9,7 +9,6 @@ import Sponsors from './Sponsors/Sponsors';
 export default function App() {
   const [chosenPage, setChosenPage] = useState('home');
 
-  // Funcție care alege ce componentă să afișeze
   const renderPage = () => {
     switch (chosenPage) {
       case 'home': return <Home />;

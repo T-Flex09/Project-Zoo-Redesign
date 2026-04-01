@@ -3,8 +3,13 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Navbar from './Navbar/Navbar';
 import Footer from './Footer/Footer';
-import Home from './Home/Home';
-import Sponsors from './Sponsors/Sponsors';
+
+import Home from './Pages/Home/Home';
+import Sponsors from './Pages/Sponsors/Sponsors';
+import Results from './Pages/Results/Results';
+import Gallery from './Pages/Gallery/Gallery';
+import Team from './Pages/Team/Team';
+import Activity from './Pages/Activity/Activity';
 
 export default function App() {
   const [chosenPage, setChosenPage] = useState('home');
@@ -12,7 +17,11 @@ export default function App() {
   const renderPage = () => {
     switch (chosenPage) {
       case 'home': return <Home />;
+      case 'team': return <Team />;
+      case 'activity': return <Activity />;
+      case 'results': return <Results />;
       case 'sponsors': return <Sponsors />;
+      case 'gallery': return <Gallery />;
       default: return <Home />;
     }
   };

@@ -21,14 +21,15 @@ export default function Navbar({setPage}: NavbarProps) {
         <nav>
             <img className={styles.logo} src={Logo} onClick={() => setPage('home')}></img>
 
-            <div className='linksContainer'></div>
-            <button onClick={() => setPage('home')}>Home</button>
-            <button onClick={() => setPage('team')}>Our Team</button>
-            <button onClick={() => setPage('activity')}>Activity</button>
-            <button onClick={() => setPage('results')}>Results</button>
-            <button onClick={() => setPage('sponsors')}>Sponsors</button>
-            <button onClick={() => setPage('gallery')}>Gallery</button>
-
+            <div className='linksContainer'>
+                <button onClick={() => setPage('home')}>Home</button>
+                <button onClick={() => setPage('team')}>Our Team</button>
+                <button onClick={() => setPage('activity')}>Activity</button>
+                <button onClick={() => setPage('results')}>Results</button>
+                <button onClick={() => setPage('sponsors')}>Sponsors</button>
+                <button onClick={() => setPage('gallery')}>Gallery</button>
+            </div>
+            
             <button className={styles.themeSwitcher} onClick={toggleTheme}>{themeButtonIcon}</button>
         </nav>
     );

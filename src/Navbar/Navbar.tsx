@@ -1,10 +1,15 @@
 import styles from './Navbar.module.css';
 import Logo from '/src/assets/Sigla_mov.png';
-import React, {useState} from 'react';
+import {useState} from 'react';
 
-export default function Navbar() {
+type PageType = 'home' | 'sponsors';
 
-    console.log(React); // netlify ahh
+interface NavbarProps {
+  setPage: (page: PageType) => void;
+}
+
+export default function Navbar({setPage}: NavbarProps) {
+
     let [themeButtonIcon, setThemeButtonIcon] = useState('✦');
 
     function toggleTheme() {
@@ -14,7 +19,11 @@ export default function Navbar() {
 
     return (
         <nav>
-            <img className={styles.logo} src={Logo}></img>
+            <img className={styles.logo} src={Logo} onClick={() => setPage('home')}></img>
+
+            <button onClick={() => setPage('home')}>Home</button>
+            <button onClick={() => setPage('sponsors')}>Sponsors</button>
+
             <button className={styles.themeSwitcher} onClick={toggleTheme}>{themeButtonIcon}</button>
         </nav>
     );

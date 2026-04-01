@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 import Navbar from './Navbar/Navbar';
@@ -14,17 +14,22 @@ import Activity from './Pages/Activity/Activity';
 export default function App() {
   const [chosenPage, setChosenPage] = useState('home');
 
-  const renderPage = () => {
-    switch (chosenPage) {
-      case 'home': return <Home />;
-      case 'team': return <Team />;
-      case 'activity': return <Activity />;
-      case 'results': return <Results />;
-      case 'sponsors': return <Sponsors />;
-      case 'gallery': return <Gallery />;
-      default: return <Home />;
-    }
-  };
+    const renderPage = () => {
+        switch (chosenPage) {
+            case 'home': return <Home />;
+            case 'team': return <Team />;
+            case 'activity': return <Activity />;
+            case 'results': return <Results />;
+            case 'sponsors': return <Sponsors />;
+            case 'gallery': return <Gallery />;
+            default: return <Home />;
+        }
+    };
+
+    useEffect(() => {
+        // Schimbă URL-ul manual
+        window.history.pushState(null, '', `/${chosenPage}`);
+    }, [chosenPage]);
 
   return (<>
         <Navbar setPage={setChosenPage} />

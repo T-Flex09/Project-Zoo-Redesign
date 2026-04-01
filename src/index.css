@@ -10,4 +10,5 @@ body {
     margin: 0;
     background-color: var(--bg-color);
     transition: 1s;
+    font-family: 'Prompt', 'Roboto Mono', monospace;
 }

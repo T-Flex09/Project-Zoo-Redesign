@@ -27,8 +27,7 @@ export default function App() {
   };
 
   return (<>
-      {/* Navbar rămâne fix sus */}
-      <Navbar setPage={setChosenPage} />
+        <Navbar setPage={setChosenPage} />
 
         <main>
             {/* AnimatePresence permite animația de "exit" (dispariție) */}
@@ -38,14 +37,13 @@ export default function App() {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 exit={{ opacity: 0 }}
-                transition={{ duration: 0.4 }} // Ajustează viteza fade-ului aici
+                transition={{ duration: 0.4 }}// Ajustează viteza fade-ului aici
             >
                 {renderPage()}
             </motion.div>
             </AnimatePresence>
         </main>
 
-        {/* Footer rămâne fix jos */}
         <Footer />
     </>);
 }

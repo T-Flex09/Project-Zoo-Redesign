@@ -1,6 +1,9 @@
 :root {
     --hexagon-color: rgb(135, 0, 180);
-    --hexagon-color-light: rgb(135, 0, 180, 0.25);
+}
+
+:root.light-mode {
+    --hexagon-color: rgb(135, 0, 180, 0.25);
 }
 
 @font-face {

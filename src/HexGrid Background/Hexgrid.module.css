@@ -1,5 +1,6 @@
 :root {
-    --hexagon-color: rgb(255, 106, 205);
+    --hexagon-color: rgb(135, 0, 180);
+    --hexagon-color-light: rgb(135, 0, 180, 0.25);
 }
 
 @font-face {
@@ -11,7 +12,7 @@
 @keyframes hexagon-fadeIn {
     0% { opacity: 0; transform: scale(0); }
     50% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0.15; transform: scale(1); }
+    100% { opacity: 1; transform: scale(1); }
 }
 
 @keyframes title-entrance-animation {

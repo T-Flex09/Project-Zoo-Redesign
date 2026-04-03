@@ -3,6 +3,7 @@ import "./Hexgrid.css";
 
 export default function Hexgrid() {
     const [hexList, setHexList] = useState<any[]>([]);
+    // const [hexUpdate, setHexUpdate] = useState<boolean>(false);
 
     function configureHexList() {
         let newHexList: any[] = [];
@@ -35,6 +36,14 @@ export default function Hexgrid() {
 
     useEffect(() => {
         configureHexList();
+
+        const handleResize = () => configureHexList();
+
+        window.addEventListener("resize", handleResize);
+
+        return () => {
+            window.removeEventListener("resize", handleResize);
+        };
     }, []);
 
     return (<>

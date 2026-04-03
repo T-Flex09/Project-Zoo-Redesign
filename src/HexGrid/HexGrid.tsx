@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Hexgrid.module.css";
+import "./Hexgrid.css";
 
 export default function Hexgrid() {
     const [hexList, setHexList] = useState<any[]>([]);
@@ -38,10 +38,10 @@ export default function Hexgrid() {
     }, []);
 
     return (<>
-        <div className={styles.backgroundUnderlay}>
-            <div className={styles.hexGrid}>
+        <div className="background-underlay">
+            <div className="hex-grid">
                 {hexList.map((hex, i) => (
-                    <div key={i} style={{
+                    <div key={i} className = "hexagon" style={{
                         width: `${hex.width}px`,
                         height: `${hex.height}px`,
                         left: `${hex.left}px`,

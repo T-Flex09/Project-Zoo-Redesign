@@ -2,14 +2,9 @@ import styles from './Navbar.module.css';
 import LogoMov from '/src/assets/Sigla_mov.png';
 import LogoAlb from '/src/assets/Sigla_alb.png';
 import {useState} from 'react';
+import { useNavigate } from 'react-router-dom';
 
-type PageType = 'home' | 'team' | 'activity' | 'results' | 'sponsors' | 'gallery';
-
-interface NavbarProps {
-    setPage: (page: PageType) => void;
-}
-
-export default function Navbar({setPage}: NavbarProps) {
+export default function Navbar() {
     let [themeButtonIcon, setThemeButtonIcon] = useState('☀️');
     let [logo, setLogo] = useState(LogoAlb);
     const [isFading, setIsFading] = useState(false);
@@ -24,20 +19,22 @@ export default function Navbar({setPage}: NavbarProps) {
         }, 300);
     }
     
-    return (
+    const navigate = useNavigate();
+
+    return (<>
         <nav>
-            <img className={`${styles.logo} ${isFading ? styles.logoFade : ''}`} src={logo} onClick={() => setPage('home')}></img>
+            <img className={`${styles.logo} ${isFading ? styles.logoFade : ''}`} src={logo} onClick={() => navigate('/home')}></img>
 
             <div className={styles.linksContainer}>
-                <button onClick={() => setPage('home')}>Home</button>
-                <button onClick={() => setPage('team')}>Our Team</button>
-                <button onClick={() => setPage('activity')}>Activity</button>
-                <button onClick={() => setPage('results')}>Results</button>
-                <button onClick={() => setPage('sponsors')}>Sponsors</button>
-                <button onClick={() => setPage('gallery')}>Gallery</button>
+                <button onClick={() => navigate('/home')}>Home</button>
+                <button onClick={() => navigate('/team')}>Our Team</button>
+                <button onClick={() => navigate('/activity')}>Activity</button>
+                <button onClick={() => navigate('/results')}>Results</button>
+                <button onClick={() => navigate('/sponsors')}>Sponsors</button>
+                <button onClick={() => navigate('/gallery')}>Gallery</button>
             </div>
             
             <button className={styles.themeSwitcher} onClick={toggleTheme}>{themeButtonIcon}</button>
         </nav>
-    );
+    </>);
 }
